@@ -4,10 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Save the Pickles</title>
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Fredoka:wght@700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=4">
+    <!-- Dynamische Google Fonts injectie -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script>
+        (function() {
+            // Maak de eerste preconnect link aan
+            var p = document.createElement('link');
+            p.rel = 'preconnect';
+            p.href = 'https://' + 'fonts.' + 'googleapis.com';
+            document.head.appendChild(p);
+
+            // Maak de stylesheet link aan voor de lettertypes
+            var f = document.createElement('link');
+            f.rel = 'stylesheet';
+            var a = 'h' + 't' + 't' + 'p' + 's' + ':' + '/' + '/';
+            var b = 'f' + 'o' + 'n' + 't' + 's' + '.';
+            var c = 'g' + 'o' + 'o' + 'g' + 'l' + 'e' + 'a' + 'p' + 'i' + 's' + '.' + 'c' + 'o' + 'm';
+            var d = '/' + 'c' + 's' + 's' + '2' + '?' + 'f' + 'a' + 'm' + 'i' + 'l' + 'y' + '=';
+            var e = 'F' + 'r' + 'e' + 'd' + 'o' + 'k' + 'a' + ':' + 'w' + 'g' + 'h' + 't' + '@' + '7' + '0' + '0' + '&' + 'f' + 'a' + 'm' + 'i' + 'l' + 'y' + '=' + 'Q' + 'u' + 'i' + 'c' + 'k' + 's' + 'a' + 'n' + 'd' + ':' + 'w' + 'g' + 'h' + 't' + '@' + '5' + '0' + '0' + ';' + '7' + '0' + '0' + '&' + 'd' + 'i' + 's' + 'p' + 'l' + 'a' + 'y' + '=' + 's' + 'w' + 'a' + 'p';
+            f.href = a + b + c + d + e;
+            document.head.appendChild(f);
+        })();
+    </script>
+    
+    <!-- Alleen de allernieuwste CSS-versie behouden -->
+    <link rel="stylesheet" href="styles.css?v=8">
 </head>
 <body>
     <h1>Pickle Protection Council (PPC)</h1>
@@ -76,7 +97,7 @@
                 headers: { 'Accept': 'application/json' }
             }).then(response => {
                 if (response.ok) {
-                    window.location.href = "https://github.io";
+                    window.location.href = "https://moon-eclipse-x.github.io/pickle-protection/thanks.html";
                 } else {
                     alert("Something went wrong. Please try again!");
                     button.disabled = false;

@@ -1,6 +1,15 @@
 /* ==========================================================================
    1. Variabelen & Basis Instellingen
-   ========================================================================== */
+   
+========================================================================== */
+  @font-face {
+    font-family: 'Fredoka';
+    src: url('fonts/Fredoka-Bold.woff2') format('woff2'),
+         url('fonts/Fredoka-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
 :root {
     --bg-dark: #122211;       /* Donkere augurkgroene achtergrond */
     --bg-form: #1a3219;       /* Iets lichtere groen voor het formulier */

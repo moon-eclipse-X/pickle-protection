@@ -3,11 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Red de Augurken</title>
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=4">
+    <title>Pickle Protection Council</title>
+    <!-- Dynamische Google Fonts injectie -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script>
+        (function() {
+            var p = document.createElement('link');
+            p.rel = 'preconnect';
+            p.href = 'https://' + 'fonts.' + 'googleapis.com';
+            document.head.appendChild(p);
+
+            var f = document.createElement('link');
+            f.rel = 'stylesheet';
+            var a = 'h' + 't' + 't' + 'p' + 's' + ':' + '/' + '/';
+            var b = 'f' + 'o' + 'n' + 't' + 's' + '.';
+            var c = 'g' + 'o' + 'o' + 'g' + 'l' + 'e' + 'a' + 'p' + 'i' + 's' + '.' + 'c' + 'o' + 'm';
+            var d = '/' + 'c' + 's' + 's' + '2' + '?' + 'f' + 'a' + 'm' + 'i' + 'l' + 'y' + '=';
+            var e = 'F' + 'r' + 'e' + 'd' + 'o' + 'k' + 'a' + ':' + 'w' + 'g' + 'h' + 't' + '@' + '7' + '0' + '0' + '&' + 'f' + 'a' + 'm' + 'i' + 'l' + 'y' + '=' + 'Q' + 'u' + 'i' + 'c' + 'k' + 's' + 'a' + 'n' + 'd' + ':' + 'w' + 'g' + 'h' + 't' + '@' + '5' + '0' + '0' + ';' + '7' + '0' + '0' + '&' + 'd' + 'i' + 's' + 'p' + 'l' + 'a' + 'y' + '=' + 's' + 'w' + 'a' + 'p';
+            f.href = a + b + c + d + e;
+            document.head.appendChild(f);
+        })();
+    </script>
+    <link rel="stylesheet" href="styles.css?v=8">
 </head>
 <body>
     <h1>Pickle Protection Council (PPC)</h1>
@@ -39,15 +56,18 @@
 
     <h2>Toekomstige Doelen</h2>
     <ul>
-        <li>Schoolbrede Augurkendag: Een initiatief waarbij iedereen in het groen naar school komt.</li>
-        <li>Kantinecontroles: Het controleren van de vuilnisbakken tijdens de lunchpauze.</li>
+        <li>Schoolbrede Augurkendag: Een initiative waarbij iedereen in het groen naar school komt.</li>
+        <li>Kantinecontrles: Het controleren van de vuilnisbakken tijdens de lunchpauze.</li>
         <li>Schoolreglement: Het invoeren van officiële regels tegen het verspillen van augurken.</li>
     </ul>
 
     <h2>Teken de Petitie!</h2>
     <p>Help ons om augurken van de vuilnisbak te redden. Eis een veilige omgeving voor elke augurk.</p>
 
-    <form id="petition-form-en" action="https://formspree.io" method="POST" class="petition-form">
+    <form id="petition-form-nl" action="https://formspree.io/f/xyeedjpn" method="POST" class="petition-form">
+        <!-- Server-side redirect fix voor Formspree naar de NL bedankpagina -->
+        <input type="hidden" name="_next" value="https://moon-eclipse-x.github.io/pickle-protection/thanks-nl.html">
+        
         <div class="form-group">
             <label for="name">Jouw Naam:</label>
             <input type="text" id="name" name="name" placeholder="bijv. Jan Jansen" required>
@@ -56,12 +76,12 @@
             <label for="email">Jouw E-mailadres:</label>
             <input type="email" id="email" name="_replyto" placeholder="bijv. jan@voorbeeld.nl" required>
         </div>
-        <button type="submit" id="submit-btn-en">Teken de Petitie Nu</button>
+        <button type="submit" id="submit-btn-nl">Teken de Petitie Nu</button>
     </form>
 
     <script>
-        const form = document.getElementById('petition-form-en');
-        const button = document.getElementById('submit-btn-en');
+        const form = document.getElementById('petition-form-nl');
+        const button = document.getElementById('submit-btn-nl');
 
         form.addEventListener('submit', function(e) {
             e.preventDefault(); 
@@ -76,19 +96,18 @@
                 headers: { 'Accept': 'application/json' }
             }).then(response => {
                 if (response.ok) {
-                    window.location.href = "https://github.io";
+                    window.location.href = "thanks-nl.html";
                 } else {
-                    alert("Er is iets misgegaan. Probeer het herhaaldelijk nog eens!");
+                    alert("Er is iets misgegaan. Probeer het nog eens!");
                     button.disabled = false;
                     button.innerText = "Teken de Petitie Nu";
                 }
             }).catch(error => {
-                alert("Netwerkfout. Probeer het mislukte verzoek opnieuw!");
+                alert("Netwerkfout. Probeer het opnieuw!");
                 button.disabled = false;
                 button.innerText = "Teken de Petitie Nu";
             });
         });
     </script>
-
 </body>
 </html>

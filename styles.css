@@ -1,0 +1,48 @@
+/* 1. De basis van de hele pagina */
+body {
+    background-color: #122211;       /* Een mooie, donkere augurgroene kleur */
+    color: #ffffff;                  /* Gewoon strak witte tekst zodat het goed leesbaar is */
+    font-family: 'Quicksand', sans-serif; /* Jouw gelinkte lettertype voor de gewone tekst */
+    
+    /* DIT IS DE TRUC VOOR HET MIDDEN: */
+    max-width: 800px;                /* Zorgt dat je site niet breder wordt dan 800 pixels */
+    margin: 0 auto;                  /* Centreert de hele site netjes in het midden */
+    padding: 20px;                   /* Zorgt voor een beetje ademruimte aan de zijkanten */
+}
+
+/* 2. De koppen (Titels) */
+h1, h2 {
+    font-family: 'Fredoka', sans-serif; /* Jouw dikke, vette lettertype voor de titels */
+    color: #a3e2a3;                  /* Een mooie, lichtgroene kleur voor de titels */
+}
+
+h1 {
+    text-align: center;              /* Zet alleen de hoofdtitel netjes in het midden */
+    font-size: 40px;                 /* Maakt de hoofdtitel lekker groot */
+    margin-top: 50px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-top: 40px;
+    border-bottom: 2px solid #254423; /* Een simpel groen lijntje onder elke h2 */
+    padding-bottom: 5px;             /* Ruimte tussen de tekst en het lijntje */
+}
+
+/* 3. De lijstjes */
+li {
+    margin-bottom: 10px;             /* Ruimte tussen de verschillende punten */
+}
+
+/* 4. Jouw petitieknop */
+button {
+    background-color: #8ed38e;       /* Lichtgroene achtergrond voor de knop */
+    color: #122211;                  /* Donkergroene tekstkleur IN de knop */
+    font-family: 'Fredoka', sans-serif; /* Zelfde stoere lettertype */
+    font-size: 18px;
+    
+    padding: 12px 24px;              /* Maakt de knop lekker dik (boven/onder, links/rechts) */
+    border: none;                    /* Haalt die lelijke standaard zwarte rand weg */
+    border-radius: 8px;              /* Maakt de hoekjes een klein beetje rond */
+    cursor: pointer;                 /* Je muis wordt een handje als je eroverheen gaat */
+}

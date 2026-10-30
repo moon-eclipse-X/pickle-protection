@@ -5,60 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Save the Pickles</title>
     <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=2">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Fredoka:wght@700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
     <h1>Pickle Protection Council (PPC)</h1>
-
     <div class="logo-container">
         <img id="img" src="protect-the-pickles.png" alt="PPC Logo">
     </div>
 
     <p class="taal-regel">
-      Read the English version <a class="taal-switch" href="index-nl.html">here</a>.
+      Bekijk de Nederlandse versie <a class="taal-switch" href="index-nl.html">here</a>.
     </p>
 
     <p class="slogan">No dill left behind. Fighting for the rights of the world's most misunderstood snack.</p>
 
     <h2>Who We Are</h2>
-    <p>The Pickle Protection Council was founded after a shocking discovery: every day, thousands of perfectly crunchy pickles are heartlessly stripped from burgers and tossed into the trash. This cruelty must end. We are a serious organization dedicated to defending the rights, safety, and emotional well-being of all pickles in our school and beyond.</p>
+    <p>The Pickle Protection Council fights for pickles that are thrown away from burgers every day. We defend the rights and safety of all pickles at school and beyond.</p>
 
     <h2>What We Have Achieved</h2>
     <ul>
-        <li>Official Website Launch: Created and deployed this global platform to raise maximum awareness for pickle advocacy.</li>
-        <li>Campus Dialogue: Sparked critical conversations about the unfair treatment and exclusion of giant sour pickles compared to sweet-and-sour slices.</li>
+        <li>Official Website Launch: Created this platform for pickle awareness.</li>
+        <li>Campus Dialogue: Started conversations about pickle treatment.</li>
     </ul>
-    
+        
     <h2>What We Are Doing Now</h2>
     <ul>
-        <li>Quality Inspections: Conducting strict, blindfolded taste tests to certify the "Perfect Crunch" of local brands.</li>
-        <li>Jar Welfare: Providing emotional support to lonely pickles stuck at the bottom of the jar by shaking them to the top.</li>
-        <li>Activism: Designing highly strategic protest signs and slogans like “All hail pickles!” and “No pickle waste!” to create awareness on campus.</li>
+        <li>Quality Inspections: Testing local brands for a good crunch.</li>
+        <li>Jar Welfare: Supporting pickles at the bottom of the jar.</li>
+        <li>Activism: Making protest signs for the campus.</li>
     </ul>
 
     <h2>Future Goals</h2>
     <ul>
-        <li>School-Wide Pickle Day: Hosting an annual event where all students wear green to school and reflect on pickle importance.</li>
-        <li>Cafeteria Patrols: Deploying certified members to supervise lunch trash cans and intercept discarded pickles.</li>
-        <li>School Legislation: Passing an official law that makes throwing away pickles punishable by school community service.</li>
+        <li>School-Wide Pickle Day: Wearing green to school.</li>
+        <li>Cafeteria Patrols: Watching the trash cans during lunch.</li>
+        <li>School Legislation: Rules against wasting pickles.</li>
     </ul>
 
     <h2>Sign the Petition!</h2>
-    <p>Help us rescue innocent pickles from a tragic fate in the cafeteria trash cans. Demand a safe school environment for every single pickle, regardless of shape, size, or sourness.</p>
+    <p>Help us save pickles from the trash. Demand a safe environment for every pickle.</p>
 
-    <form action="https://formspree.io/f/xyeedjpn" method="POST" class="petition-form">
-        <input type="hidden" name="_next" value="https://github.io">
+    <form id="petition-form-en" action="https://formspree.io/f/xyeedjpn" method="POST" class="petition-form">
         <div class="form-group">
             <label for="name">Your Name:</label>
             <input type="text" id="name" name="name" placeholder="e.g. John Doe" required>
         </div>
         <div class="form-group">
-            <label for="email">Your Email:</label>
+            <label for="email">Your Email Address:</label>
             <input type="email" id="email" name="_replyto" placeholder="e.g. john@example.com" required>
         </div>
-        <button type="submit">Sign the Petition Now</button>
+        <button type="submit" id="submit-btn-en">Sign the Petition Now</button>
     </form>
+
+    <script>
+        const form = document.getElementById('petition-form-en');
+        const button = document.getElementById('submit-btn-en');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); 
+            button.disabled = true;
+            button.innerText = "Sending...";
+
+            const data = new FormData(form);
+
+            fetch(form.action, {
+                method: 'POST',
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    window.location.href = "https://github.io";
+                } else {
+                    alert("Something went wrong. Please try again!");
+                    button.disabled = false;
+                    button.innerText = "Sign the Petition Now";
+                }
+            }).catch(error => {
+                alert("Network error. Please try again!");
+                button.disabled = false;
+                button.innerText = "Sign the Petition Now";
+            });
+        });
+    </script>
+
 </body>
 </html>

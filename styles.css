@@ -82,9 +82,8 @@ a.taal-switch:active {
 a.taal-switch:hover {
     color: var(--pickle-hover) !important;
 }
-
 /* ==========================================================================
-   5. Formulier & Knoppen
+   5. Formulier & Knoppen (Met harde tekstkleur fix)
    ========================================================================== */
 .petition-form {
     background-color: var(--bg-form);
@@ -112,10 +111,15 @@ a.taal-switch:hover {
     padding: 10px;
     border-radius: 6px;
     border: 1px solid var(--border-green);
-    background-color: var(--bg-dark);
-    color: var(--text-white);
+    background-color: #122211 !important; /* Hardcoded donkergroen */
+    color: #ffffff !important;            /* Hardcoded WITTE tekst bij het typen */
     font-family: 'Quicksand', sans-serif;
     font-size: 16px;
+}
+
+/* Zorgt dat placeholder tekst (zoals bijv. Jan Jansen) lichtgrijs is */
+.form-group input::placeholder {
+    color: #aaaaaa !important;
 }
 
 .form-group input:focus {
@@ -125,8 +129,8 @@ a.taal-switch:hover {
 }
 
 button {
-    background-color: #8ed38e;       /* Originele knopkleur behouden */
-    color: var(--bg-dark);
+    background-color: #8ed38e;       
+    color: #122211 !important;        /* Altijd donkere tekst op de knop */
     font-size: 18px;
     padding: 12px 24px;
     border: none;

@@ -5,13 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Save the Pickles</title>
     <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css?v=2">
 </head>
 <body>
     <h1>Pickle Protection Council (PPC)</h1>
-    <p>No dill left behind. Fighting for the rights of the world's most misunderstood snack.</p>
+
+    <div class="logo-container">
+        <img id="img" src="protect-the-pickles.png" alt="PPC Logo">
+    </div>
+
+    <p class="taal-regel">
+      Read the English version <a class="taal-switch" href="index-nl.html">here</a>.
+    </p>
+
+    <p class="slogan">No dill left behind. Fighting for the rights of the world's most misunderstood snack.</p>
 
     <h2>Who We Are</h2>
     <p>The Pickle Protection Council was founded after a shocking discovery: every day, thousands of perfectly crunchy pickles are heartlessly stripped from burgers and tossed into the trash. This cruelty must end. We are a serious organization dedicated to defending the rights, safety, and emotional well-being of all pickles in our school and beyond.</p>
@@ -38,7 +47,18 @@
 
     <h2>Sign the Petition!</h2>
     <p>Help us rescue innocent pickles from a tragic fate in the cafeteria trash cans. Demand a safe school environment for every single pickle, regardless of shape, size, or sourness.</p>
-    
-    <button>Sign the Petition Now</button>
+
+    <form action="https://formspree.io/f/xyeedjpn" method="POST" class="petition-form">
+        <input type="hidden" name="_next" value="https://github.io">
+        <div class="form-group">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" placeholder="e.g. John Doe" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="_replyto" placeholder="e.g. john@example.com" required>
+        </div>
+        <button type="submit">Sign the Petition Now</button>
+    </form>
 </body>
 </html>

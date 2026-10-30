@@ -1,48 +1,137 @@
-/* 1. De basis van de hele pagina */
-body {
-    background-color: #122211;       /* Een mooie, donkere augurgroene kleur */
-    color: #ffffff;                  /* Gewoon strak witte tekst zodat het goed leesbaar is */
-    font-family: 'Quicksand', sans-serif; /* Jouw gelinkte lettertype voor de gewone tekst */
-    
-    /* DIT IS DE TRUC VOOR HET MIDDEN: */
-    max-width: 800px;                /* Zorgt dat je site niet breder wordt dan 800 pixels */
-    margin: 0 auto;                  /* Centreert de hele site netjes in het midden */
-    padding: 20px;                   /* Zorgt voor een beetje ademruimte aan de zijkanten */
+/* ==========================================================================
+   1. Variabelen & Basis Instellingen
+   ========================================================================== */
+:root {
+    --bg-dark: #122211;       /* Donkere augurkgroene achtergrond */
+    --bg-form: #1a3219;       /* Iets lichtere groen voor het formulier */
+    --text-white: #ffffff;    /* Strak witte tekst */
+    --accent-light: #a3e2a3;  /* Lichtgroen voor titels en labels */
+    --pickle-green: #D4E791;  /* De perfecte felle augurkenkleur */
+    --pickle-hover: #AEC670;  /* Donkerdere augurkenkleur voor hovers */
+    --border-green: #254423;  /* Subtiele groene randen */
 }
 
-/* 2. De koppen (Titels) */
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    font-family: 'Quicksand', sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ==========================================================================
+   2. Typografie & Titels
+   ========================================================================== */
+h1, h2, button {
+    font-family: 'Fredoka', sans-serif;
+}
+
 h1, h2 {
-    font-family: 'Fredoka', sans-serif; /* Jouw dikke, vette lettertype voor de titels */
-    color: #a3e2a3;                  /* Een mooie, lichtgroene kleur voor de titels */
+    color: var(--accent-light);
 }
 
 h1 {
-    text-align: center;              /* Zet alleen de hoofdtitel netjes in het midden */
-    font-size: 40px;                 /* Maakt de hoofdtitel lekker groot */
+    text-align: center;
+    font-size: 40px;
     margin-top: 50px;
 }
 
 h2 {
     font-size: 24px;
     margin-top: 40px;
-    border-bottom: 2px solid #254423; /* Een simpel groen lijntje onder elke h2 */
-    padding-bottom: 5px;             /* Ruimte tussen de tekst en het lijntje */
+    border-bottom: 2px solid var(--border-green);
+    padding-bottom: 5px;
 }
 
-/* 3. De lijstjes */
 li {
-    margin-bottom: 10px;             /* Ruimte tussen de verschillende punten */
+    margin-bottom: 10px;
 }
 
-/* 4. Jouw petitieknop */
+/* ==========================================================================
+   3. Logo & Layout Elementen
+   ========================================================================== */
+.logo-container, .taal-regel, .slogan, .thanks-container {
+    text-align: center;
+}
+
+.taal-regel, .slogan {
+    margin-bottom: 20px;
+}
+
+#img {
+    max-width: 250px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    border: 2px solid var(--border-green);
+}
+
+/* ==========================================================================
+   4. De Anti-Paars Link Styling
+   ========================================================================== */
+a.taal-switch,
+a.taal-switch:link,
+a.taal-switch:visited,
+a.taal-switch:active {
+    color: var(--pickle-green) !important;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+a.taal-switch:hover {
+    color: var(--pickle-hover) !important;
+}
+
+/* ==========================================================================
+   5. Formulier & Knoppen
+   ========================================================================== */
+.petition-form {
+    background-color: var(--bg-form);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid var(--border-green);
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--accent-light);
+}
+
+.form-group input {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid var(--border-green);
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--pickle-green);
+    box-shadow: 0 0 5px rgba(212, 231, 145, 0.5);
+}
+
 button {
-    background-color: #8ed38e;       /* Lichtgroene achtergrond voor de knop */
-    color: #122211;                  /* Donkergroene tekstkleur IN de knop */
-    font-family: 'Fredoka', sans-serif; /* Zelfde stoere lettertype */
+    background-color: #8ed38e;       /* Originele knopkleur behouden */
+    color: var(--bg-dark);
     font-size: 18px;
-    
-    padding: 12px 24px;              /* Maakt de knop lekker dik (boven/onder, links/rechts) */
-    border: none;                    /* Haalt die lelijke standaard zwarte rand weg */
-    border-radius: 8px;              /* Maakt de hoekjes een klein beetje rond */
-    cursor: pointer;                 /* Je muis wordt een handje als je eroverheen gaat */
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
 }
